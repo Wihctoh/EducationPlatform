@@ -1,3 +1,4 @@
+import { log } from "console";
 import { pool } from "../db";
 import { iCourse } from "../interfaces";
 
@@ -28,4 +29,18 @@ async function createCourseDB(course: string): Promise<iCourse[]> {
   return data;
 }
 
-export { getAllUsersCoursesDB, createCourseDB, getUserIDCoursesDB };
+async function deleteCourseDB(id: number): Promise<iCourse[]> {
+  const client = await pool.connect();
+
+  const sql = "delete from courses where id = $1 returning *";
+  const data = (await client.query(sql, [id])).rows;
+
+  return data;
+}
+
+export {
+  getAllUsersCoursesDB,
+  createCourseDB,
+  getUserIDCoursesDB,
+  deleteCourseDB,
+};

@@ -3,6 +3,7 @@ import {
   getAllUsersCourses,
   createCourse,
   getUserIDCourses,
+  deleteCourse,
 } from "../service/course.service";
 import { iCourse } from "../interfaces";
 
@@ -37,6 +38,17 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
     res.status(200).send(data);
   } catch (error: any) {
     res.status(403).send(error.message);
+  }
+});
+
+router.delete("/:id", async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const data: iCourse[] = await deleteCourse(id);
+
+    res.status(200).send(data);
+  } catch (error: any) {
+    res.status(404).send(error.message);
   }
 });
 
