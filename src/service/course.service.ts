@@ -3,6 +3,7 @@ import {
   createCourseDB,
   getUserIDCoursesDB,
   deleteCourseDB,
+  updateCourseDB,
 } from "../repository/course.repository";
 import { iCourse } from "../interfaces";
 
@@ -14,22 +15,37 @@ async function getAllUsersCourses(): Promise<iCourse[]> {
   return data;
 }
 
-async function createCourse(course: string): Promise<iCourse[]> {
+async function createCourse(course: iCourse[]): Promise<iCourse[]> {
   const data = await createCourseDB(course);
 
   return data;
 }
 
-async function getUserIDCourses(id: number): Promise<iCourse[]> {
+async function getUserIDCourses(id: iCourse[]): Promise<iCourse[]> {
   const data = await getUserIDCoursesDB(id);
 
   return data;
 }
 
-async function deleteCourse(id: number): Promise<iCourse[]> {
+async function deleteCourse(id: iCourse[]): Promise<iCourse[]> {
   const data = await deleteCourseDB(id);
 
   return data;
 }
 
-export { getAllUsersCourses, createCourse, getUserIDCourses, deleteCourse };
+async function updateCourse(
+  id: iCourse[],
+  course: iCourse[]
+): Promise<iCourse[]> {
+  const data = await updateCourseDB(id, course);
+
+  return data;
+}
+
+export {
+  getAllUsersCourses,
+  createCourse,
+  getUserIDCourses,
+  deleteCourse,
+  updateCourse,
+};
