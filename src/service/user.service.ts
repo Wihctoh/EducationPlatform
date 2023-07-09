@@ -1,6 +1,5 @@
 import {
   getAllUsersDB,
-  createUserDB,
   getUserByIdDB,
   updateUserDB,
   deleteUserDB,
@@ -17,17 +16,6 @@ async function getAllUsers(): Promise<iUser[]> {
 
 async function getUserById(id: number): Promise<iUser[]> {
   const data = await getUserByIdDB(id);
-
-  return data;
-}
-
-async function createUser(
-  name: string,
-  surname: string,
-  email: string,
-  pwd: string
-): Promise<iUser[]> {
-  const data = await createUserDB(name, surname, email, pwd);
 
   return data;
 }
@@ -50,4 +38,4 @@ async function deleteUser(id: number): Promise<iUser[]> {
   return data;
 }
 
-export { getAllUsers, createUser, getUserById, updateUser, deleteUser };
+export { getAllUsers, getUserById, updateUser, deleteUser };
