@@ -13,11 +13,21 @@ async function createUser(
   const foundEmail = await getEmailDB(email);
   if (foundEmail.length) throw new Error("no have user!");
 
-  const hashPwd = await bcrypt.hash(email, salt);
+  const hashPwd = await bcrypt.hash(pwd, salt);
 
   const data = await createUserDB(name, surname, email, hashPwd);
 
   return data;
 }
 
-export { createUser };
+async function authUser(email: string, pwd: string): Promise<iUser[]> {
+  const foundUser = await getEmailDB(email);
+  if (!foundUser.length) throw new Error("user not found!");
+
+  const bool = await bcrypt.compare(pwd, foundUser[0].pwd);
+  if (!bool) throw new Error("pwd not correct!");
+
+  return foundUser;
+}
+
+export { createUser, authUser };
