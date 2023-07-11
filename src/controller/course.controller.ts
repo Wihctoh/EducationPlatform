@@ -6,13 +6,12 @@ import {
   deleteCourse,
   updateCourse,
 } from "../service/course.service";
-import { iCourse } from "../interfaces";
 
 const router = express.Router();
 
 router.get("/", async (req: Request, res: Response): Promise<void> => {
   try {
-    const data: iCourse[] = await getAllUsersCourses();
+    const data = await getAllUsersCourses();
 
     res.status(200).send(data);
   } catch (error: any) {
@@ -23,7 +22,7 @@ router.get("/", async (req: Request, res: Response): Promise<void> => {
 router.get("/:id", async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const data: iCourse[] = await getUserIDCourses(id);
+    const data = await getUserIDCourses(id);
 
     res.status(200).send(data);
   } catch (error: any) {
@@ -34,7 +33,7 @@ router.get("/:id", async (req: Request, res: Response): Promise<void> => {
 router.post("/", async (req: Request, res: Response): Promise<void> => {
   try {
     const { course } = req.body;
-    const data: iCourse[] = await createCourse(course);
+    const data = await createCourse(course);
 
     res.status(200).send(data);
   } catch (error: any) {
@@ -45,7 +44,7 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
 router.delete("/:id", async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const data: iCourse[] = await deleteCourse(id);
+    const data = await deleteCourse(id);
 
     res.status(200).send(data);
   } catch (error: any) {
@@ -57,7 +56,7 @@ router.put("/:id", async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
     const { course } = req.body;
-    const data: iCourse[] = await updateCourse(id, course);
+    const data = await updateCourse(id, course);
 
     res.status(200).send(data);
   } catch (error: any) {

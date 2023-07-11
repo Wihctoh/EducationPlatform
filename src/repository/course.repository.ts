@@ -10,7 +10,7 @@ async function getAllUsersCoursesDB(): Promise<iCourse[]> {
   return data;
 }
 
-async function getUserIDCoursesDB(id: iCourse[]): Promise<iCourse[]> {
+async function getUserIDCoursesDB(id: number): Promise<iCourse[]> {
   const client = await pool.connect();
 
   const sql = "select * from courses where id = $1";
@@ -19,7 +19,7 @@ async function getUserIDCoursesDB(id: iCourse[]): Promise<iCourse[]> {
   return data;
 }
 
-async function createCourseDB(course: iCourse[]): Promise<iCourse[]> {
+async function createCourseDB(course: string): Promise<iCourse[]> {
   const client = await pool.connect();
 
   const sql = "insert into courses (course) values ($1) returning *";
@@ -28,7 +28,7 @@ async function createCourseDB(course: iCourse[]): Promise<iCourse[]> {
   return data;
 }
 
-async function deleteCourseDB(id: iCourse[]): Promise<iCourse[]> {
+async function deleteCourseDB(id: number): Promise<iCourse[]> {
   const client = await pool.connect();
 
   const sql = "delete from courses where id = $1 returning *";
@@ -37,10 +37,7 @@ async function deleteCourseDB(id: iCourse[]): Promise<iCourse[]> {
   return data;
 }
 
-async function updateCourseDB(
-  id: iCourse[],
-  course: iCourse[]
-): Promise<iCourse[]> {
+async function updateCourseDB(id: number, course: string): Promise<iCourse[]> {
   const client = await pool.connect();
 
   const sql = "update courses set course = $1 where id = $2 returning *";

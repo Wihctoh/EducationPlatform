@@ -15,28 +15,25 @@ async function getAllUsersCourses(): Promise<iCourse[]> {
   return data;
 }
 
-async function createCourse(course: iCourse[]): Promise<iCourse[]> {
+async function createCourse(course: string): Promise<iCourse[]> {
   const data = await createCourseDB(course);
 
   return data;
 }
 
-async function getUserIDCourses(id: iCourse[]): Promise<iCourse[]> {
+async function getUserIDCourses(id: number): Promise<iCourse[]> {
   const data = await getUserIDCoursesDB(id);
 
   return data;
 }
 
-async function deleteCourse(id: iCourse[]): Promise<iCourse[]> {
+async function deleteCourse(id: number): Promise<iCourse[]> {
   const data = await deleteCourseDB(id);
 
   return data;
 }
 
-async function updateCourse(
-  id: iCourse[],
-  course: iCourse[]
-): Promise<iCourse[]> {
+async function updateCourse(id: number, course: string): Promise<iCourse[]> {
   const data = await updateCourseDB(id, course);
 
   return data;
