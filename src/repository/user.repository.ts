@@ -59,7 +59,12 @@ async function deleteUserDB(id: number): Promise<iUser[]> {
     await client.query("commit");
 
     return data;
-  } catch (error) {}
+  } catch (error: any) {
+    await client.query("rollback");
+    console.log(`deleteUserDB: ${error.message}`);
+
+    return [];
+  }
 }
 
 export { getAllUsersDB, getUserByIdDB, updateUserDB, deleteUserDB };
