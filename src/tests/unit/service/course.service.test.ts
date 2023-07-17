@@ -25,6 +25,18 @@ describe("", () => {
       { id: 1, course: "test1" },
     ]);
   });
+
+  test("", async () => {
+    const repoFunc = jest.spyOn(repo, "getAllUsersCoursesDB");
+    repoFunc.mockResolvedValue([]);
+
+    try {
+      const res = await getAllUsersCourses();
+    } catch (error: any) {
+      expect(repoFunc).toHaveBeenCalled();
+      expect(error.message).toBe("no data");
+    }
+  });
 });
 
 describe("", () => {
@@ -38,6 +50,18 @@ describe("", () => {
 
     expect(res.length).toBe(1);
     expect(res).toEqual([{ id: 1, course: "test1" }]);
+  });
+
+  test("", async () => {
+    const repoFunc = jest.spyOn(repo, "getUserIDCoursesDB");
+    repoFunc.mockResolvedValue([]);
+
+    try {
+      const res = await getUserIDCourses(1);
+    } catch (error: any) {
+      expect(repoFunc).toHaveBeenCalled();
+      expect(error.message).toBe("no have user!");
+    }
   });
 });
 
@@ -54,6 +78,18 @@ describe("", () => {
     expect(res).toEqual([{ id: 1, course: "test1" }]);
     expect(res).toHaveLength(1);
   });
+
+  test("", async () => {
+    const repoFunc = jest.spyOn(repo, "createCourseDB");
+    repoFunc.mockResolvedValue([]);
+
+    try {
+      const res = await createCourse("test1");
+    } catch (error: any) {
+      expect(repoFunc).toHaveBeenCalled();
+      expect(error.message).toBe("cant create user!");
+    }
+  });
 });
 
 describe("", () => {
@@ -68,6 +104,18 @@ describe("", () => {
     expect(res).toEqual([{ id: 1, course: "test1" }]);
     expect(res).toHaveLength(1);
   });
+
+  test("", async () => {
+    const repoFunc = jest.spyOn(repo, "updateCourseDB");
+    repoFunc.mockResolvedValue([]);
+
+    try {
+      const res = await updateCourse(1, "test1");
+    } catch (error: any) {
+      expect(repoFunc).toHaveBeenCalled();
+      expect(error.message).toBe("cant update user!");
+    }
+  });
 });
 
 describe("", () => {
@@ -81,5 +129,17 @@ describe("", () => {
 
     expect(res).toEqual([{ id: 1, course: "test1" }]);
     expect(res).toHaveLength(1);
+  });
+
+  test("", async () => {
+    const repoFunc = jest.spyOn(repo, "deleteCourseDB");
+    repoFunc.mockResolvedValue([]);
+
+    try {
+      const res = await deleteCourse(1);
+    } catch (error: any) {
+      expect(repoFunc).toHaveBeenCalled();
+      expect(error.message).toBe("cant delete user!");
+    }
   });
 });

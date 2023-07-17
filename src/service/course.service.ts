@@ -18,11 +18,15 @@ async function getAllUsersCourses(): Promise<iCourse[]> {
 async function createCourse(course: string): Promise<iCourse[]> {
   const data = await createCourseDB(course);
 
+  if (!data.length) throw new Error("cant create user!");
+
   return data;
 }
 
 async function getUserIDCourses(id: number): Promise<iCourse[]> {
   const data = await getUserIDCoursesDB(id);
+
+  if (!data.length) throw new Error("no have user!");
 
   return data;
 }
@@ -30,11 +34,15 @@ async function getUserIDCourses(id: number): Promise<iCourse[]> {
 async function deleteCourse(id: number): Promise<iCourse[]> {
   const data = await deleteCourseDB(id);
 
+  if (!data.length) throw new Error("cant delete user!");
+
   return data;
 }
 
 async function updateCourse(id: number, course: string): Promise<iCourse[]> {
   const data = await updateCourseDB(id, course);
+
+  if (!data.length) throw new Error("cant update user!");
 
   return data;
 }
