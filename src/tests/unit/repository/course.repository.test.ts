@@ -14,4 +14,20 @@ jest.mock("pg", function () {
   };
 });
 
+describe("", () => {
+  test("", async () => {
+    mClient.query.mockResolvedValue({
+      rows: [
+        { id: 1, courses: "qwe" },
+        { id: 2, courses: "qweqw" },
+      ],
+    });
 
+    const res = await getAllUsersCoursesDB();
+
+    expect(res).toEqual([
+      { id: 1, courses: "qwe" },
+      { id: 2, courses: "qweqw" },
+    ]);
+  });
+});
