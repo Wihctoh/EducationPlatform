@@ -1,4 +1,8 @@
-import { getAllUsersCoursesDB } from "../../../repository/course.repository";
+import {
+  getAllUsersCoursesDB,
+  getUserIDCoursesDB,
+  createCourseDB,
+} from "../../../repository/course.repository";
 
 const mClient = { query: jest.fn() };
 
@@ -29,5 +33,29 @@ describe("", () => {
       { id: 1, courses: "qwe" },
       { id: 2, courses: "qweqw" },
     ]);
+  });
+});
+
+describe("", () => {
+  test("", async () => {
+    mClient.query.mockResolvedValue({
+      rows: [{ id: 1, courses: "qwe" }],
+    });
+
+    const res = await getUserIDCoursesDB(1);
+
+    expect(res).toEqual([{ id: 1, courses: "qwe" }]);
+  });
+});
+
+describe("", () => {
+  test("", async () => {
+    mClient.query.mockResolvedValue({
+      rows: [{ id: 1, courses: "qwe" }],
+    });
+
+    const res = await createCourseDB('wqer');
+
+    expect(res).toEqual([{ id: 1, courses: "qwe" }]);
   });
 });
