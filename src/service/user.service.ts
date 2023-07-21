@@ -17,6 +17,8 @@ async function getAllUsers(): Promise<iUser[]> {
 async function getUserById(id: number): Promise<iUser[]> {
   const data = await getUserByIdDB(id);
 
+  if (data.length === 0) throw new Error("no data!");
+
   return data;
 }
 
@@ -34,6 +36,8 @@ async function updateUser(
 
 async function deleteUser(id: number): Promise<iUser[]> {
   const data = await deleteUserDB(id);
+
+  if (data.length === 0) throw new Error("no data!");
 
   return data;
 }
