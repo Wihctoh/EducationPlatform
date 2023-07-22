@@ -2,6 +2,8 @@ import {
   getAllUsersCoursesDB,
   getUserIDCoursesDB,
   createCourseDB,
+  deleteCourseDB,
+  updateCourseDB,
 } from "../../../repository/course.repository";
 
 const mClient = { query: jest.fn() };
@@ -54,7 +56,31 @@ describe("", () => {
       rows: [{ id: 1, courses: "qwe" }],
     });
 
-    const res = await createCourseDB('wqer');
+    const res = await createCourseDB("wqer");
+
+    expect(res).toEqual([{ id: 1, courses: "qwe" }]);
+  });
+});
+
+describe("", () => {
+  test("", async () => {
+    mClient.query.mockResolvedValue({
+      rows: [{ id: 1, courses: "qwe" }],
+    });
+
+    const res = await deleteCourseDB(1);
+
+    expect(res).toEqual([{ id: 1, courses: "qwe" }]);
+  });
+});
+
+describe("", () => {
+  test("", async () => {
+    mClient.query.mockResolvedValue({
+      rows: [{ id: 1, courses: "qwe" }],
+    });
+
+    const res = await updateCourseDB(1, "qwe");
 
     expect(res).toEqual([{ id: 1, courses: "qwe" }]);
   });
