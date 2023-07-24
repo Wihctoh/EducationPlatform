@@ -1,4 +1,8 @@
-import { createUserDB, getEmailDB } from "../repository/api.repository";
+import {
+  createUserDB,
+  getEmailDB,
+  deleteUserTestDB,
+} from "../repository/api.repository";
 import { iUser } from "../interfaces";
 import bcrypt from "bcrypt";
 
@@ -30,4 +34,11 @@ async function authUser(email: string, pwd: string): Promise<iUser[]> {
   return foundUser;
 }
 
-export { createUser, authUser };
+async function deleteUserTest(id: number): Promise<iUser[]> {
+  const data = await deleteUserTestDB(id);
+
+  if (!data.length) throw new Error("user cant delete!");
+
+  return data;
+}
+export { createUser, authUser, deleteUserTest };

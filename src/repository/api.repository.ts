@@ -36,4 +36,24 @@ async function getEmailDB(email: string): Promise<iUser[]> {
   return data;
 }
 
-export { createUserDB, getEmailDB };
+async function deleteUserTestDB(id: number): Promise<iUser[]> {
+  const client = await pool.connect();
+
+  try {
+    await client.query("begin");
+
+    const sql = "delete from users where id = $1 returning *";
+    const data = (await client.query(sql, [id])).rows;
+
+    await client.query("commit");
+
+    return data;
+  } catch (error: any) {
+    await client.query("rollback");
+    console.log(`deleteUserDB: ${error.message}`);
+
+    return [];
+  }
+}
+
+export { createUserDB, getEmailDB, deleteUserTestDB };

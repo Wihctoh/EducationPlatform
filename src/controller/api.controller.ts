@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { createUser, authUser } from "../service/api.service";
+import { createUser, authUser, deleteUserTest } from "../service/api.service";
 import buildResponse from "../helper/buildResponse";
 
 const router = express.Router();
@@ -23,6 +23,17 @@ router.post("/auth", async (req: Request, res: Response): Promise<void> => {
     buildResponse(res, 200, data);
   } catch (error: any) {
     buildResponse(res, 403, error.message);
+  }
+});
+
+router.delete("/:id", async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id } = req.params;
+    const data = await deleteUserTest(id);
+
+    buildResponse(res, 200, data);
+  } catch (error: any) {
+    buildResponse(res, 404, error.message);
   }
 });
 
