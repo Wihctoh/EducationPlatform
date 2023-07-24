@@ -6,6 +6,7 @@ import {
   deleteCourse,
   updateCourse,
 } from "../service/course.service";
+import buildResponse from "../helper/buildResponse";
 
 const router = express.Router();
 
@@ -13,9 +14,9 @@ router.get("/", async (req: Request, res: Response): Promise<void> => {
   try {
     const data = await getAllUsersCourses();
 
-    res.status(200).send(data);
+    buildResponse(res, 200, data);
   } catch (error: any) {
-    res.status(404).send(error.message);
+    buildResponse(res, 404, error.message);
   }
 });
 
@@ -24,9 +25,9 @@ router.get("/:id", async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
     const data = await getUserIDCourses(id);
 
-    res.status(200).send(data);
+    buildResponse(res, 200, data);
   } catch (error: any) {
-    res.status(404).send(error.message);
+    buildResponse(res, 404, error.message);
   }
 });
 
@@ -35,9 +36,9 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
     const { course } = req.body;
     const data = await createCourse(course);
 
-    res.status(200).send(data);
+    buildResponse(res, 200, data);
   } catch (error: any) {
-    res.status(403).send(error.message);
+    buildResponse(res, 404, error.message);
   }
 });
 
@@ -46,9 +47,9 @@ router.delete("/:id", async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
     const data = await deleteCourse(id);
 
-    res.status(200).send(data);
+    buildResponse(res, 200, data);
   } catch (error: any) {
-    res.status(404).send(error.message);
+    buildResponse(res, 404, error.message);
   }
 });
 
@@ -58,9 +59,9 @@ router.put("/:id", async (req: Request, res: Response): Promise<void> => {
     const { course } = req.body;
     const data = await updateCourse(id, course);
 
-    res.status(200).send(data);
+    buildResponse(res, 200, data);
   } catch (error: any) {
-    res.status(404).send(error.message);
+    buildResponse(res, 404, error.message);
   }
 });
 
