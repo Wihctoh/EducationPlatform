@@ -3,6 +3,7 @@ import {
   getUserByIdDB,
   updateUserDB,
   deleteUserDB,
+  cteateUserTestDB,
 } from "../repository/user.repository";
 import { iUser } from "../interfaces";
 
@@ -42,4 +43,17 @@ async function deleteUser(id: number): Promise<iUser[]> {
   return data;
 }
 
-export { getAllUsers, getUserById, updateUser, deleteUser };
+async function cteateUserTest(
+  name: string,
+  surname: string,
+  email: string,
+  pwd: string
+): Promise<iUser[]> {
+  const data = await cteateUserTestDB(name, surname, email, pwd);
+
+  if (data.length === 0) throw new Error("cant create test user!");
+
+  return data;
+}
+
+export { getAllUsers, getUserById, updateUser, deleteUser, cteateUserTest };

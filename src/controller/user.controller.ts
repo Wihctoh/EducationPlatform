@@ -4,6 +4,7 @@ import {
   getUserById,
   updateUser,
   deleteUser,
+  cteateUserTest,
 } from "../service/user.service";
 import buildResponse from "../helper/buildResponse";
 
@@ -46,6 +47,18 @@ router.delete("/:id", async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
     const data = await deleteUser(id);
+
+    buildResponse(res, 200, data);
+  } catch (error: any) {
+    buildResponse(res, 404, error.message);
+  }
+});
+
+router.post("/", async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { name, surname, email, pwd } = req.body;
+
+    const data = await cteateUserTest(name, surname, email, pwd);
 
     buildResponse(res, 200, data);
   } catch (error: any) {
