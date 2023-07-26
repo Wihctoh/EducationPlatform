@@ -33,7 +33,11 @@ test("get user by id", async () => {
 });
 
 test("put", async () => {
-  const res = await req(app).put(`/user/${testID}`).send(testUserObj);
+  const res = await req(app)
+    .put(`/user/${testID}`)
+    .send({ name: "ads", surname: "zxc", email: "qzx@axz.wq", pwd: "76545" });
+
+  console.log(res.body);
 
   expect(res.statusCode).toBe(200);
   expect(res.body.length).toBeGreaterThanOrEqual(1);
@@ -41,9 +45,6 @@ test("put", async () => {
 
 test("delete", async () => {
   const res = await req(app).delete(`/user/${testID}`);
-
-  console.log(testID);
-  console.log(res.body);
 
   expect(res.statusCode).toBe(200);
   expect(res.body.length).toBeGreaterThanOrEqual(1);
