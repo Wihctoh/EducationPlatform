@@ -37,8 +37,6 @@ test("put", async () => {
     .put(`/user/${testID}`)
     .send({ name: "ads", surname: "zxc", email: "qzx@axz.wq", pwd: "76545" });
 
-  console.log(res.body);
-
   expect(res.statusCode).toBe(200);
   expect(res.body.length).toBeGreaterThanOrEqual(1);
 });
