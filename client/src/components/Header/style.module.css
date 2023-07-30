@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper h1 {
+  font: 400 16px Dela Gothic One;
+  color: #000;
+}
+
+.wrapper h1::after {
+  content: "|";
+  width: 0px;
+  height: 16px;
+  background-color: #e0e0e0;
+  margin-left: 28px;
+}
+
+.wrapper .btns {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.wrapper .logo {
+  font: 400 16px Montserrat;
+  color: #000;
+}
+
+.wrapper .singInBtn {
+  font: 400 16px Montserrat;
+  color: #fff;
+  border-radius: 14.188px;
+  background: #2b788b;
+  padding: 13px 0;
+  width: 109px;
+  text-align: center;
+}
+
+.wrapper .singInBtn:hover {
+  transition: 0.5s;
+  opacity: 70%;
+}
