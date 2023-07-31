@@ -23,9 +23,48 @@ function PreviewInfo() {
 
         <div className={style.previewGuy}></div>
       </div>
-      <div></div>
-      <div></div>
-      <div></div>
+
+      <div className={style.wrapper}>
+        <div className={style.learnLang}>
+          <div className={style.learnLangImg}></div>
+
+          <div className={style.learnLangDiscr}>
+            <h1>Learn a language in a playful way</h1>
+            <p>Make learning programming languages more fun with mini-games</p>
+
+            <div className={style.learnLangDiscrImg}>
+              <div className={style.learnLangDiscrImgSprint}></div>
+              <div className={style.learnLangDiscrImgTasks}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={style.knowledge}>
+        <div className={style.knowledgeDiscription}>
+          <h1>Increase your knowledge</h1>
+          <p>Traditional and new effective approaches to learning languages</p>
+
+          <div className={style.knowledgeDiscriptionBtn}>Textbook →</div>
+        </div>
+
+        <div className={style.knowledgeImg}></div>
+      </div>
+
+      <div className={style.wrapper}>
+        <div className={style.watchProgress}>
+          <div className={style.watchProgressImg}></div>
+
+          <div className={style.watchProgressDiscription}>
+            <h1>Watch your progress every day</h1>
+            <p>Save statistics on your achievements and mistakes</p>
+
+            <div className={style.watchProgressDiscriptionBtn}>
+              Statistics →
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

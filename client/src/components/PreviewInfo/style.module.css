@@ -1,8 +1,10 @@
+/* --------------------------------- preview section ---------------------- */
 .preview {
   margin: auto;
+  padding-top: 95px;
+  max-width: 1180px;
   display: flex;
   justify-content: space-between;
-  margin: 7% 0;
 }
 .preview .previewInfo {
   display: flex;
@@ -44,6 +46,11 @@
   letter-spacing: -0.64px;
   text-align: center;
   padding: 14px 0;
+}
+
+.preview .previewInfo .btnInfo:hover {
+  transition: 0.5s;
+  opacity: 75%;
 }
 
 .preview .previewInfo .students {
@@ -88,4 +95,187 @@
   background-size: cover;
   position: relative;
   top: 15px;
+}
+
+/* --------------------------------- learnLang section ---------------------- */
+
+.wrapper {
+  width: 100%;
+  background-color: #fff;
+}
+
+.learnLang {
+  max-width: 1180px;
+  margin: auto;
+  padding-top: 78px;
+  display: flex;
+  gap: 120px;
+}
+
+.learnLang .learnLangImg {
+  background: url("./assets/learnLangImg.png") no-repeat;
+  width: 580px;
+  height: 445px;
+  background-size: cover;
+}
+
+.learnLang .learnLangDiscr {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+}
+
+.learnLang .learnLangDiscr h1 {
+  margin-top: 44px;
+  color: var(--primaty-black, #000);
+  font: 400 48px Dela Gothic One;
+  letter-spacing: -1.92px;
+  line-height: 100%; /* 48px */
+}
+
+.learnLang .learnLangDiscr p {
+  margin-top: 30px;
+  color: var(--primaty-grey-dark, #757575);
+  font: 600 18px Montserrat;
+  line-height: 140%;
+  letter-spacing: -0.72px;
+}
+
+.learnLangDiscr .learnLangDiscrImg {
+  margin-top: 30px;
+  display: flex;
+  gap: 21px;
+}
+
+.learnLangDiscr .learnLangDiscrImg .learnLangDiscrImgSprint {
+  background: url("./assets/learnLangImgSprint.png") no-repeat;
+  background-size: cover;
+  width: 131px;
+  height: 145px;
+}
+
+.learnLangDiscr .learnLangDiscrImg .learnLangDiscrImgTasks {
+  background: url("./assets/learnLangImgTasks.png") no-repeat;
+  background-size: cover;
+  width: 172px;
+  height: 145px;
+}
+
+/* --------------------------------- learnLang section ---------------------- */
+
+.knowledge {
+  max-width: 1180px;
+  padding-top: 26px;
+  display: flex;
+  justify-content: end;
+  margin: auto;
+  gap: 25px;
+}
+
+.knowledge .knowledgeDiscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 475px;
+}
+
+.knowledge .knowledgeDiscription h1 {
+  color: var(--primaty-black, #000);
+  font: 400 48px Dela Gothic One;
+  line-height: 100%;
+  letter-spacing: -1.92px;
+}
+
+.knowledge .knowledgeDiscription p {
+  max-width: 396px;
+  margin-top: 30px;
+  color: var(--primaty-grey-dark, #757575);
+  font: 600 18px Montserrat;
+  line-height: 140%;
+  letter-spacing: -0.72px;
+}
+
+.knowledge .knowledgeDiscription .knowledgeDiscriptionBtn {
+  margin-top: 34px;
+  width: 131px;
+  text-align: center;
+  border-radius: 100px;
+  background: var(--primaty-cyan-light, #c3dce3);
+  padding: 14px 0;
+
+  font: 700 16px Montserrat;
+  color: #2b788b;
+  line-height: 100%;
+  letter-spacing: -0.64px;
+}
+
+.knowledge .knowledgeDiscription .knowledgeDiscriptionBtn:hover {
+  transition: 0.5s;
+  opacity: 75%;
+}
+
+.knowledge .knowledgeImg {
+  background: url("./assets/knowledgeImg.png") no-repeat;
+  width: 580px;
+  height: 473.973px;
+  background-size: cover;
+}
+
+/* --------------------------------- watch progress section ---------------------- */
+
+.watchProgress {
+  padding-top: 95px;
+  width: 1180px;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.watchProgress .watchProgressImg {
+  background: url("./assets/watchProgressImg.png") no-repeat;
+  background-size: cover;
+  width: 680px;
+  height: 409.254px;
+}
+
+.watchProgress .watchProgressDiscription {
+  max-width: 474.464px;
+}
+
+.watchProgress .watchProgressDiscription h1 {
+  color: var(--primaty-black, #000);
+
+  font: 400 48px Dela Gothic One;
+  line-height: 100%;
+  letter-spacing: -1.92px;
+}
+
+.watchProgress .watchProgressDiscription p {
+  margin-top: 30px;
+  max-width: 396.886px;
+  color: var(--primaty-grey-dark, #757575);
+
+  font: 600 18px Montserrat;
+  line-height: 140%;
+  letter-spacing: -0.72px;
+}
+
+.watchProgress .watchProgressDiscription .watchProgressDiscriptionBtn {
+  margin-top: 34px;
+  width: 129px;
+  padding: 14px 0;
+  border-radius: 100px;
+  background: var(--primaty-cyan-light, #c3dce3);
+  color: var(--primaty-cyan-dark, #2b788b);
+
+  font: 700 16px Montserrat;
+  line-height: 100%;
+  letter-spacing: -0.64px;
+  text-align: center;
+}
+
+.watchProgress .watchProgressDiscription .watchProgressDiscriptionBtn:hover {
+  transition: 0.5s;
+  opacity: 75%;
 }
