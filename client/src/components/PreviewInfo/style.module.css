@@ -2,7 +2,6 @@
   margin: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin: 7% 0;
 }
 .preview .previewInfo {
@@ -19,6 +18,7 @@
 }
 
 .preview .previewInfo h1 {
+  margin-top: 24px;
   font: 400 56px Dela Gothic One;
   color: var(--primaty-black, #000);
   line-height: 120%;
@@ -26,6 +26,8 @@
 }
 
 .preview .previewInfo .info {
+  max-width: 396px;
+  margin-top: 30px;
   font: 600 18px Montserrat;
   color: var(--primaty-grey-dark, #757575);
   line-height: 140%;
@@ -33,17 +35,57 @@
 }
 
 .preview .previewInfo .btnInfo {
+  margin-top: 32px;
+  width: 165px;
+  border-radius: 100px;
+  background: var(--primaty-cyan-light, #c3dce3);
   font: 700 16px Montserrat;
   color: #2b788b;
   letter-spacing: -0.64px;
+  text-align: center;
+  padding: 14px 0;
+}
+
+.preview .previewInfo .students {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  max-width: 163px;
+}
+
+.preview .previewInfo .students .studentsCounts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.preview .previewInfo .students .lightning {
+  background: url("../PreviewInfo/assets/lightning.svg") no-repeat;
+  width: 24px;
+  height: 30px;
+  background-size: contain;
+}
+
+.preview .previewInfo .students .numberPlus {
+  color: #000;
+  font: 400 40px Dela Gothic One;
+  letter-spacing: -0.8px;
+}
+
+.preview .previewInfo .students .numberPlus::after {
+  content: "+";
+  color: #2b788b;
+}
+
+.preview .previewInfo .students p {
+  text-align: center;
 }
 
 .previewGuy {
   background-image: url("../PreviewInfo/assets/previewGuy.png");
-  width: 933px;
+  width: 722px;
   height: 601px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   position: relative;
-  left: 12%;
+  top: 15px;
 }

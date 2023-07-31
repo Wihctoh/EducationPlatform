@@ -9,14 +9,6 @@
   color: #000;
 }
 
-.wrapper h1::after {
-  content: "|";
-  width: 0px;
-  height: 16px;
-  background-color: #e0e0e0;
-  margin-left: 28px;
-}
-
 .wrapper .btns {
   display: flex;
   align-items: center;

@@ -12,12 +12,10 @@ function PreviewInfo() {
           </p>
           <div className={style.btnInfo}>About platform</div>
 
-          <div>
-            <div>
-              <div></div>
-              <p>
-                600 <span>+</span>
-              </p>
+          <div className={style.students}>
+            <div className={style.studentsCounts}>
+              <div className={style.lightning}></div>
+              <div className={style.numberPlus}>600</div>
             </div>
             <p>Students</p>
           </div>
