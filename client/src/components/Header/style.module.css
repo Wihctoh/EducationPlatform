@@ -28,13 +28,13 @@ h1 a {
 .wrapper .singInBtn {
   font: 400 16px Montserrat;
   border-radius: 14.188px;
-  background: #2b788b;
+  background-color: #2b788b;
+  color: #fff;
   padding: 13px 0;
   width: 109px;
   text-align: center;
 }
-.wrapper .singInBtn a {
-  color: #fff;
+.wrapper .singInBtn {
 }
 
 .wrapper .singInBtn:hover {

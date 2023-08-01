@@ -48,7 +48,7 @@
   }
 
   .loginImg {
-    background: url("../LoginPage/assets/loginImg.png") no-repeat;
+    background: url("./assets/loginImg.png") no-repeat;
     width: 481px;
     height: 320px;
     background-size: cover;

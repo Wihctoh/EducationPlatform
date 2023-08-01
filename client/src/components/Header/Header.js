@@ -12,9 +12,9 @@ function Header() {
         <div className={style.logo}>
           <Link to={"/login"}> Login →</Link>
         </div>
-        <div className={style.singInBtn}>
-          <Link to={"/registration"}> Sign Up</Link>
-        </div>
+        <Link to={"/registration"}>
+          <div className={style.singInBtn}>Sign Up</div>
+        </Link>
       </div>
     </div>
   );
