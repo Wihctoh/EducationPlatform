@@ -8,6 +8,5 @@
 
 body {
   margin: 0 auto;
-  background: var(--primaty-grey-light, #f6f5f4);
-  box-shadow: 0px -1px 0px 0px #e0e0e0 inset;
+  background: #f6f5f4;
 }

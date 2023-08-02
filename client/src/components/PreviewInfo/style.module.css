@@ -1,7 +1,7 @@
 /* --------------------------------- preview section ---------------------- */
 .preview {
   margin: auto;
-  padding-top: 95px;
+  padding: 95px 0 30px 0;
   max-width: 1180px;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@
 
 .preview .previewInfo .discription {
   font: 700 16px Montserrat;
-  color: var(--primaty-cyan-dark, #2b788b);
+  color: #2b788b;
   letter-spacing: 2.24px;
   text-transform: uppercase;
 }
@@ -22,7 +22,7 @@
 .preview .previewInfo h1 {
   margin-top: 24px;
   font: 400 56px Dela Gothic One;
-  color: var(--primaty-black, #000);
+  color: #000;
   line-height: 120%;
   letter-spacing: -2.24px;
 }
@@ -31,7 +31,7 @@
   max-width: 396px;
   margin-top: 30px;
   font: 600 18px Montserrat;
-  color: var(--primaty-grey-dark, #757575);
+  color: #757575;
   line-height: 140%;
   letter-spacing: -0.72px;
 }
@@ -40,7 +40,7 @@
   margin-top: 32px;
   width: 165px;
   border-radius: 100px;
-  background: var(--primaty-cyan-light, #c3dce3);
+  background-color: #c3dce3;
   font: 700 16px Montserrat;
   color: #2b788b;
   letter-spacing: -0.64px;
@@ -107,7 +107,7 @@
 .learnLang {
   max-width: 1180px;
   margin: auto;
-  padding-top: 78px;
+  padding: 77px 0;
   display: flex;
   gap: 120px;
 }
@@ -127,15 +127,15 @@
 
 .learnLang .learnLangDiscr h1 {
   margin-top: 44px;
-  color: var(--primaty-black, #000);
+  color: #000;
   font: 400 48px Dela Gothic One;
   letter-spacing: -1.92px;
-  line-height: 100%; /* 48px */
+  line-height: 100%;
 }
 
 .learnLang .learnLangDiscr p {
   margin-top: 30px;
-  color: var(--primaty-grey-dark, #757575);
+  color: #757575;
   font: 600 18px Montserrat;
   line-height: 140%;
   letter-spacing: -0.72px;
@@ -180,7 +180,7 @@
 }
 
 .knowledge .knowledgeDiscription h1 {
-  color: var(--primaty-black, #000);
+  color: #000;
   font: 400 48px Dela Gothic One;
   line-height: 100%;
   letter-spacing: -1.92px;
@@ -189,7 +189,7 @@
 .knowledge .knowledgeDiscription p {
   max-width: 396px;
   margin-top: 30px;
-  color: var(--primaty-grey-dark, #757575);
+  color: #757575;
   font: 600 18px Montserrat;
   line-height: 140%;
   letter-spacing: -0.72px;
@@ -200,7 +200,7 @@
   width: 131px;
   text-align: center;
   border-radius: 100px;
-  background: var(--primaty-cyan-light, #c3dce3);
+  background-color: #c3dce3;
   padding: 14px 0;
 
   font: 700 16px Montserrat;
@@ -224,7 +224,7 @@
 /* --------------------------------- watch progress section ---------------------- */
 
 .watchProgress {
-  padding-top: 95px;
+  padding: 95px 0;
   width: 1180px;
   margin: auto;
   display: flex;
@@ -244,7 +244,7 @@
 }
 
 .watchProgress .watchProgressDiscription h1 {
-  color: var(--primaty-black, #000);
+  color: #000;
 
   font: 400 48px Dela Gothic One;
   line-height: 100%;
@@ -254,7 +254,7 @@
 .watchProgress .watchProgressDiscription p {
   margin-top: 30px;
   max-width: 396.886px;
-  color: var(--primaty-grey-dark, #757575);
+  color: #757575;
 
   font: 600 18px Montserrat;
   line-height: 140%;
@@ -266,8 +266,8 @@
   width: 129px;
   padding: 14px 0;
   border-radius: 100px;
-  background: var(--primaty-cyan-light, #c3dce3);
-  color: var(--primaty-cyan-dark, #2b788b);
+  background-color: #c3dce3;
+  color: #2b788b;
 
   font: 700 16px Montserrat;
   line-height: 100%;
