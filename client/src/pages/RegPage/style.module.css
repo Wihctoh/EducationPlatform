@@ -44,6 +44,11 @@
       font: 700 16px Montserrat;
       line-height: 100%;
       letter-spacing: -0.64px;
+
+      &:hover {
+        transition: 0.5s;
+        opacity: 70%;
+      }
     }
   }
 
