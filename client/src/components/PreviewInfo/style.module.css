@@ -1,15 +1,17 @@
 /* --------------------------------- preview section ---------------------- */
+
 .preview {
   margin: auto;
   padding: 95px 0 30px 0;
   max-width: 1180px;
   display: flex;
   justify-content: space-between;
-}
-.preview .previewInfo {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
+
+  .previewInfo {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+  }
 }
 
 .preview .previewInfo .discription {
@@ -46,11 +48,11 @@
   letter-spacing: -0.64px;
   text-align: center;
   padding: 14px 0;
-}
 
-.preview .previewInfo .btnInfo:hover {
-  transition: 0.5s;
-  opacity: 75%;
+  &:hover {
+    transition: 0.5s;
+    opacity: 75%;
+  }
 }
 
 .preview .previewInfo .students {

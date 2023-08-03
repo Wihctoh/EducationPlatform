@@ -1,0 +1,55 @@
+.login {
+  max-width: 1180px;
+  margin: 83px auto;
+  display: flex;
+  justify-content: space-between;
+
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 519px;
+
+    & h1 {
+      color: #000;
+      font: 400 56px Dela Gothic One;
+      line-height: 120%;
+      letter-spacing: -2.24px;
+    }
+
+    & input {
+      width: 100%;
+      border-radius: 2px;
+      border: 1px solid #ced4da;
+      height: 60px;
+      padding: 6px 20px;
+      outline: none;
+    }
+
+    & ::placeholder {
+      color: #adb5bd;
+      font: 400 20px Open Sans;
+      line-height: 155%;
+    }
+
+    .loginBtn {
+      border-radius: 100px;
+      background: #2b788b;
+      width: 110px;
+      padding: 14px 22px;
+      text-align: center;
+      color: #fff;
+
+      font: 700 16px Montserrat;
+      line-height: 100%;
+      letter-spacing: -0.64px;
+    }
+  }
+
+  .loginImg {
+    background: url("./assets/loginImg.png") no-repeat;
+    width: 481px;
+    height: 320px;
+    background-size: cover;
+  }
+}
