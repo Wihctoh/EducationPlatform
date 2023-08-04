@@ -8,7 +8,7 @@ function RegPage() {
       <Header />
       <div className={style.login}>
         <div className={style.loginForm}>
-          <h1>Login</h1>
+          <h1>Sign Up</h1>
 
           <div>
             <input type="text" placeholder="Name"></input>
