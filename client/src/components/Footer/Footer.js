@@ -6,16 +6,15 @@ function Footer() {
       <div className={style.footerWrapper}>
         <div className={style.footerInfo}>
           <div className={style.footerInfoNav}>
-            <p>Home</p>
-            <p>Textbook</p>
-            <p>Statistics</p>
-            <p>Sprint</p>
+            {["Home", "Textbook", "Statistics", "Sprint"].map((el) => (
+              <p>{el}</p>
+            ))}
           </div>
 
           <div className={style.footerInfoPeoples}>
-            <p>Alex</p>
-            <p>Gabriel</p>
-            <p>Marcus</p>
+            {["Alex", "Gabriel", "Marcus"].map((el) => (
+              <p>{el}</p>
+            ))}
           </div>
         </div>
 
@@ -23,9 +22,9 @@ function Footer() {
 
         <div className={style.footerContacts}>
           <div className={style.footerContactsImg}>
-            <div className={style.gitImg}></div>
-            <div className={style.gtImg}></div>
-            <div className={style.youtubeImg}></div>
+            {["gitImg", "gtImg", "youtubeImg"].map((el) => (
+              <div className={style[el]}></div>
+            ))}
           </div>
 
           <p>

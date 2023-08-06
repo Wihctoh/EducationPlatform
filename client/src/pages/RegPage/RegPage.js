@@ -3,31 +3,28 @@ import Header from "../../components/Header/Header";
 import style from "../RegPage/style.module.css";
 
 function RegPage() {
+  const arrStr = ["Name", "Surname", "Password", "Confirm Password"];
+
   return (
     <>
       <Header />
+
       <div className={style.login}>
         <div className={style.loginForm}>
           <h1>Sign Up</h1>
 
-          <div>
-            <input type="text" placeholder="Name"></input>
-          </div>
-          <div>
-            <input type="text" placeholder="Surname"></input>
-          </div>
-          <div>
-            <input type="password" placeholder="Password"></input>
-          </div>
-          <div>
-            <input type="password" placeholder="Confirm Password"></input>
-          </div>
+          {arrStr.map((el) => (
+            <div>
+              <input type="text" placeholder={el}></input>
+            </div>
+          ))}
 
           <div className={style.loginBtn}>Sign Up</div>
         </div>
 
         <div className={style.loginImg}></div>
       </div>
+
       <Footer />
     </>
   );
