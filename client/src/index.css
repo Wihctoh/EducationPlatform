@@ -9,6 +9,7 @@
 body {
   margin: 0 auto;
   background: #f6f5f4;
+  overflow-y: scroll;
 }
 
 a {

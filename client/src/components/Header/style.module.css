@@ -5,37 +5,37 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-h1 a {
-  font: 400 16px Dela Gothic One;
-  color: #000;
-}
+  & h1 a {
+    font: 400 16px Dela Gothic One;
+    color: #000;
+  }
 
-.btns {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
+  .btns {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 
-.btns .logo a {
-  font: 700 16px Montserrat;
-  color: #000;
-  line-height: 100%;
-  letter-spacing: -0.662px;
-}
+    .logo a {
+      font: 700 16px Montserrat;
+      color: #000;
+      line-height: 100%;
+      letter-spacing: -0.662px;
+    }
+  }
 
-.wrapper .singInBtn {
-  font: 400 16px Montserrat;
-  border-radius: 14.188px;
-  background-color: #2b788b;
-  color: #fff;
-  padding: 13px 0;
-  width: 109px;
-  text-align: center;
-}
+  .singInBtn {
+    font: 400 16px Montserrat;
+    border-radius: 14.188px;
+    background-color: #2b788b;
+    color: #fff;
+    padding: 13px 0;
+    width: 109px;
+    text-align: center;
 
-.wrapper .singInBtn:hover {
-  transition: 0.5s;
-  opacity: 70%;
+    &:hover {
+      transition: 0.5s;
+      opacity: 70%;
+    }
+  }
 }
