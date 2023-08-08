@@ -2,6 +2,7 @@
   max-width: 1180px;
   margin: auto;
   padding-top: 24px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,6 +10,9 @@
   & h1 a {
     font: 400 16px Dela Gothic One;
     color: #000;
+    padding-right: 30px;
+
+    border-right: 1.182px solid #e0e0e0;
   }
 
   .btns {
@@ -25,17 +29,19 @@
   }
 
   .singInBtn {
-    font: 400 16px Montserrat;
-    border-radius: 14.188px;
-    background-color: #2b788b;
-    color: #fff;
-    padding: 13px 0;
     width: 109px;
+    padding: 13px 0;
+
+    font: 400 16px Montserrat;
+    color: #fff;
+    background-color: #2b788b;
+    border-radius: 14.188px;
     text-align: center;
 
+    transition: 0.5s;
+
     &:hover {
-      transition: 0.5s;
-      opacity: 70%;
+      background-color: #ffd700;
     }
   }
 }
