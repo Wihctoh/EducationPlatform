@@ -14,7 +14,7 @@
   }
 }
 
-.preview .previewInfo .discription {
+.preview .previewInfo .description {
   font: 700 16px Montserrat;
   color: #2b788b;
   letter-spacing: 2.24px;
@@ -121,13 +121,13 @@
   background-size: cover;
 }
 
-.learnLang .learnLangDiscr {
+.learnLang .learnLangDescription {
   display: flex;
   flex-direction: column;
   max-width: 480px;
 }
 
-.learnLang .learnLangDiscr h1 {
+.learnLang .learnLangDescription h1 {
   margin-top: 44px;
   color: #000;
   font: 400 48px Dela Gothic One;
@@ -135,7 +135,7 @@
   line-height: 100%;
 }
 
-.learnLang .learnLangDiscr p {
+.learnLang .learnLangDescription p {
   margin-top: 30px;
   color: #757575;
   font: 600 18px Montserrat;
@@ -143,20 +143,20 @@
   letter-spacing: -0.72px;
 }
 
-.learnLangDiscr .learnLangDiscrImg {
+.learnLangDescription .learnLangDescriptionImg {
   margin-top: 30px;
   display: flex;
   gap: 21px;
 }
 
-.learnLangDiscr .learnLangDiscrImg .learnLangDiscrImgSprint {
+.learnLangDescription .learnLangDescriptionImg .learnLangDescriptionImgSprint {
   background: url("./assets/learnLangImgSprint.png") no-repeat;
   background-size: cover;
   width: 131px;
   height: 145px;
 }
 
-.learnLangDiscr .learnLangDiscrImg .learnLangDiscrImgTasks {
+.learnLangDescription .learnLangDescriptionImg .learnLangDescriptionImgTasks {
   background: url("./assets/learnLangImgTasks.png") no-repeat;
   background-size: cover;
   width: 172px;
@@ -169,26 +169,26 @@
   max-width: 1180px;
   padding-top: 26px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin: auto;
   gap: 25px;
 }
 
-.knowledge .knowledgeDiscription {
+.knowledge .knowledgeDescription {
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 475px;
 }
 
-.knowledge .knowledgeDiscription h1 {
+.knowledge .knowledgeDescription h1 {
   color: #000;
   font: 400 48px Dela Gothic One;
   line-height: 100%;
   letter-spacing: -1.92px;
 }
 
-.knowledge .knowledgeDiscription p {
+.knowledge .knowledgeDescription p {
   max-width: 396px;
   margin-top: 30px;
   color: #757575;
@@ -197,7 +197,7 @@
   letter-spacing: -0.72px;
 }
 
-.knowledge .knowledgeDiscription .knowledgeDiscriptionBtn {
+.knowledge .knowledgeDescription .knowledgeDescriptionBtn {
   margin-top: 34px;
   width: 131px;
   text-align: center;
@@ -211,7 +211,7 @@
   letter-spacing: -0.64px;
 }
 
-.knowledge .knowledgeDiscription .knowledgeDiscriptionBtn:hover {
+.knowledge .knowledgeDescription .knowledgeDescriptionBtn:hover {
   transition: 0.5s;
   opacity: 75%;
 }
@@ -241,11 +241,11 @@
   height: 409.254px;
 }
 
-.watchProgress .watchProgressDiscription {
+.watchProgress .watchProgressDescription {
   max-width: 474.464px;
 }
 
-.watchProgress .watchProgressDiscription h1 {
+.watchProgress .watchProgressDescription h1 {
   color: #000;
 
   font: 400 48px Dela Gothic One;
@@ -253,7 +253,7 @@
   letter-spacing: -1.92px;
 }
 
-.watchProgress .watchProgressDiscription p {
+.watchProgress .watchProgressDescription p {
   margin-top: 30px;
   max-width: 396.886px;
   color: #757575;
@@ -263,7 +263,7 @@
   letter-spacing: -0.72px;
 }
 
-.watchProgress .watchProgressDiscription .watchProgressDiscriptionBtn {
+.watchProgress .watchProgressDescription .watchProgressDescriptionBtn {
   margin-top: 34px;
   width: 129px;
   padding: 14px 0;
@@ -277,7 +277,7 @@
   text-align: center;
 }
 
-.watchProgress .watchProgressDiscription .watchProgressDiscriptionBtn:hover {
+.watchProgress .watchProgressDescription .watchProgressDescriptionBtn:hover {
   transition: 0.5s;
   opacity: 75%;
 }
