@@ -1,8 +1,13 @@
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import style from "../LoginPage/style.module.css";
+import InputComp from "../../components/Input/InputComp";
 
 function LoginPage() {
+  const inpData = [
+    { text: "Email", type: "text" },
+    { text: "Password", type: "password" },
+  ];
   return (
     <>
       <Header />
@@ -10,12 +15,7 @@ function LoginPage() {
         <div className={style.loginForm}>
           <h1>Login</h1>
 
-          <div>
-            <input type="text" placeholder="Login"></input>
-          </div>
-          <div>
-            <input type="password" placeholder="Password"></input>
-          </div>
+          <InputComp data={inpData} />
 
           <div className={style.loginBtn}>Login</div>
         </div>

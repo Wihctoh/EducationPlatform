@@ -1,20 +1,20 @@
-import style from "../Footer/style.module.css";
+import style from "./style.module.css";
+import Options from "./Options";
+import Icons from "./Icons";
 
 function Footer() {
+  // const footerContactsImg = ["gitImg", "gtImg", "youtubeImg"];
+
   return (
     <>
       <div className={style.footerWrapper}>
         <div className={style.footerInfo}>
           <div className={style.footerInfoNav}>
-            {["Home", "Textbook", "Statistics", "Sprint"].map((el) => (
-              <p>{el}</p>
-            ))}
+            <Options data={["Home", "Textbook", "Statistics", "Sprint"]} />
           </div>
 
           <div className={style.footerInfoPeoples}>
-            {["Alex", "Gabriel", "Marcus"].map((el) => (
-              <p>{el}</p>
-            ))}
+            <Options data={["Alex", "Gabriel", "Marcus"]} />
           </div>
         </div>
 
@@ -22,9 +22,7 @@ function Footer() {
 
         <div className={style.footerContacts}>
           <div className={style.footerContactsImg}>
-            {["gitImg", "gtImg", "youtubeImg"].map((el) => (
-              <div className={style[el]}></div>
-            ))}
+            <Icons data={["gitImg", "gtImg", "youtubeImg"]} />
           </div>
 
           <p>
