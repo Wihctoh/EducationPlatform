@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import style from "./Header.module.css";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import LoginIcon from "@mui/icons-material/Login";
 
 function Header() {
   return (
@@ -12,8 +13,8 @@ function Header() {
 
       <div className={style.btns}>
         <Link to={"/login"}>
-          <Button variant="contained" className={style.singInBtn}>
-            Login →
+          <Button variant="contained" endIcon={<LoginIcon />} className={style.singInBtn}>
+            Login
           </Button>
         </Link>
         <Link to={"/signup"}>
