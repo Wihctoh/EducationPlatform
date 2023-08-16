@@ -3,11 +3,9 @@ import { Alert } from "@mui/material";
 
 const Alerts = () => {
   return (
-    <div>
-      <Alert variant="filled" severity="error">
-        Login Error!
-      </Alert>
-    </div>
+    <Alert variant="filled" severity="error">
+      Login Error!
+    </Alert>
   );
 };
 

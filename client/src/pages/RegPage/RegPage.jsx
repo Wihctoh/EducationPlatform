@@ -22,7 +22,9 @@ function RegPage() {
             ]}
           />
 
-          <Button className={style.loginBtn}>Sign Up</Button>
+          <Button variant="contained" size="large" className={style.loginBtn}>
+            Sign Up
+          </Button>
         </div>
 
         <div className={style.loginImg}></div>
