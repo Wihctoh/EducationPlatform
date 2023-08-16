@@ -19,29 +19,15 @@
     display: flex;
     align-items: center;
     gap: 25px;
-
-    .logo a {
-      font: 700 16px Montserrat;
-      color: #000;
-      line-height: 100%;
-      letter-spacing: -0.662px;
-    }
   }
 
   .singInBtn {
-    width: 109px;
-    padding: 13px 0;
-
     font: 400 16px Montserrat;
-    color: #fff;
-    background-color: #2b788b;
-    border-radius: 14.188px;
-    text-align: center;
-
-    transition: 0.5s;
+    color: #152e37;
+    background: linear-gradient(145deg, rgba(134, 208, 218, 1) 0%, rgba(50, 151, 168, 1) 100%);
 
     &:hover {
-      background-color: #4682b4;
+      background: linear-gradient(145deg, rgba(183, 228, 234, 1) 0%, rgba(77, 179, 195, 1) 100%);
     }
   }
 }

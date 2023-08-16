@@ -1,13 +1,10 @@
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import style from "../LoginPage/style.module.css";
-import InputComp from "../../components/Input/InputComp";
+import style from "../LoginPage/LoginPage.module.css";
+import InputForm from "../../components/Input/InputForm";
+import { Button } from "@mui/material";
 
 function LoginPage() {
-  const inpData = [
-    { text: "Email", type: "text" },
-    { text: "Password", type: "password" },
-  ];
   return (
     <>
       <Header />
@@ -15,9 +12,16 @@ function LoginPage() {
         <div className={style.loginForm}>
           <h1>Login</h1>
 
-          <InputComp data={inpData} />
+          <InputForm
+            data={[
+              { text: "Email*", type: "text" },
+              { text: "Password*", type: "password" },
+            ]}
+          />
 
-          <div className={style.loginBtn}>Login</div>
+          <Button variant="contained" className={style.loginBtn}>
+            Login
+          </Button>
         </div>
 
         <div className={style.loginImg}></div>

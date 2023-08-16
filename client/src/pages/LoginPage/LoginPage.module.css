@@ -9,6 +9,9 @@
     flex-direction: column;
     gap: 30px;
     width: 519px;
+    border-radius: 5%;
+    padding: 3%;
+    background-color: #eceae8;
 
     & h1 {
       color: #000;
@@ -17,36 +20,15 @@
       letter-spacing: -2.24px;
     }
 
-    & input {
-      width: 100%;
-      border-radius: 2px;
-      border: 1px solid #ced4da;
-      height: 60px;
-      padding: 6px 20px;
-      outline: none;
-    }
-
-    & ::placeholder {
-      color: #adb5bd;
-      font: 400 20px Open Sans;
-      line-height: 155%;
-    }
-
     .loginBtn {
-      border-radius: 100px;
-      background: #2b788b;
       width: 110px;
-      padding: 14px 22px;
-      text-align: center;
-      color: #fff;
-
-      font: 700 16px Montserrat;
-      line-height: 100%;
-      letter-spacing: -0.64px;
+      text-transform: none;
+      font: 400 16px Montserrat;
+      color: #152e37;
+      background: linear-gradient(145deg, rgba(134, 208, 218, 1) 0%, rgba(50, 151, 168, 1) 100%);
 
       &:hover {
-        transition: 0.5s;
-        opacity: 70%;
+        background: linear-gradient(145deg, rgba(183, 228, 234, 1) 0%, rgba(77, 179, 195, 1) 100%);
       }
     }
   }

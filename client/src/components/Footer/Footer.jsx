@@ -3,8 +3,6 @@ import Options from "./Options";
 import Icons from "./Icons";
 
 function Footer() {
-  // const footerContactsImg = ["gitImg", "gtImg", "youtubeImg"];
-
   return (
     <>
       <div className={style.footerWrapper}>
