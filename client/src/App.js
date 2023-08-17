@@ -4,7 +4,7 @@ import PreviewPages from "./pages/PreviewPage/PreviewPages";
 import { Routes, Route } from "react-router-dom";
 import RegPage from "./pages/RegPage/RegPage";
 
-import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider } from "@mui/material/styles";
 import customTheme from "./theme";
 
 function App() {

@@ -1,10 +1,10 @@
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import style from "../LoginPage/LoginPage.module.css";
 import InputForm from "../../components/Input/InputForm";
+import style from "../LoginPage/LoginPage.module.css";
 import { Button } from "@mui/material";
-import { useState } from "react";
 import Alerts from "../../components/Alert/Alert";
+import { useState } from "react";
 
 function LoginPage() {
   const [alert, setAlert] = useState();
@@ -22,6 +22,8 @@ function LoginPage() {
               { text: "Password*", type: "password" },
             ]}
           />
+
+          <>{alert}</>
 
           <Button
             variant="contained"
