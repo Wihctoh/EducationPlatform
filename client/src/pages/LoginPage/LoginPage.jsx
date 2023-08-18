@@ -3,11 +3,21 @@ import Header from "../../components/Header/Header";
 import InputForm from "../../components/Input/InputForm";
 import style from "../LoginPage/LoginPage.module.css";
 import { Button } from "@mui/material";
-import Alerts from "../../components/Alert/Alert";
+import ErrAlert from "../../components/Alert/ErrorAlert";
 import { useState } from "react";
+import axios from "axios";
+import SuccessAlert from "../../components/Alert/SuccessAlert";
 
 function LoginPage() {
-  const [alert, setAlert] = useState();
+  const [authAlert, setAuthAlert] = useState();
+
+  async function request() {
+    const response = await axios.get("http://localhost:3001");
+
+    response.data.length
+      ? setAuthAlert(<SuccessAlert sendMess={"Success Login"} />)
+      : setAuthAlert(<ErrAlert sendMess={"Login Error! Check Email of Password."} />);
+  }
 
   return (
     <>
@@ -23,14 +33,9 @@ function LoginPage() {
             ]}
           />
 
-          <>{alert}</>
+          {authAlert}
 
-          <Button
-            variant="contained"
-            size="large"
-            className={style.loginBtn}
-            onClick={() => setAlert(<Alerts />)}
-          >
+          <Button variant="contained" size="large" className={style.loginBtn} onClick={request}>
             Login
           </Button>
         </div>
