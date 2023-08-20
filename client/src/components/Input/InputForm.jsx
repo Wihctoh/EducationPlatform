@@ -8,12 +8,12 @@ const InputForm = ({ data, setReqValue, reqValue }) => {
         return (
           <div key={index}>
             <TextField
-              id={el.text}
-              label={el.text}
               variant="outlined"
-              type={el.type}
               color="secondary"
               fullWidth
+              id={el.text}
+              label={el.text}
+              type={el.type}
               onChange={(e) => {
                 setReqValue({ ...reqValue, [e.target.id]: e.target.value });
               }}
