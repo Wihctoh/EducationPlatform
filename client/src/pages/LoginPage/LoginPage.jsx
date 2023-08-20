@@ -3,11 +3,16 @@ import Header from "../../components/Header/Header";
 import InputForm from "../../components/Input/InputForm";
 import style from "../LoginPage/LoginPage.module.css";
 import { Button } from "@mui/material";
-import Alerts from "../../components/Alert/Alert";
 import { useState } from "react";
+import axios from "axios";
 
 function LoginPage() {
-  const [alert, setAlert] = useState();
+  const [reqValue, setReqValue] = useState({ email: "", pwd: "" });
+
+  async function login() {
+    const request = await axios.post("http://localhost:3001/api/auth", reqValue);
+    console.log(request.data);
+  }
 
   return (
     <>
@@ -17,26 +22,22 @@ function LoginPage() {
           <h1>Login</h1>
 
           <InputForm
+            setReqValue={setReqValue}
+            reqValue={reqValue}
             data={[
-              { text: "Email*", type: "text" },
-              { text: "Password*", type: "password" },
+              { text: "email", type: "text" },
+              { text: "pwd", type: "password" },
             ]}
           />
 
-          <>{alert}</>
-
-          <Button
-            variant="contained"
-            size="large"
-            className={style.loginBtn}
-            onClick={() => setAlert(<Alerts />)}
-          >
+          <Button variant="contained" size="large" className={style.loginBtn} onClick={login}>
             Login
           </Button>
         </div>
 
         <div className={style.loginImg}></div>
       </div>
+
       <Footer />
     </>
   );
