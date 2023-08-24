@@ -1,6 +1,7 @@
 import "./App.css";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import PreviewPages from "./pages/PreviewPage/PreviewPages";
+import StudentsPage from "./pages/StudentsPage/StudentsPage";
 import { Routes, Route } from "react-router-dom";
 import RegPage from "./pages/RegPage/RegPage";
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<PreviewPages />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/signup" element={<RegPage />}></Route>
+        <Route path="/students" element={<StudentsPage />}></Route>
       </Routes>
     </ThemeProvider>
   );

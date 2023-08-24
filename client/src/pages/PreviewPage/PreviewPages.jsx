@@ -4,11 +4,11 @@ import Footer from "../../components/Footer/Footer";
 
 function PreviewPages() {
   return (
-    <div>
+    <>
       <Header />
       <PreviewInfo />
       <Footer />
-    </div>
+    </>
   );
 }
 

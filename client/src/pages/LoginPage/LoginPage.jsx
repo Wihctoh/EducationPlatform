@@ -5,13 +5,16 @@ import style from "../LoginPage/LoginPage.module.css";
 import { Button } from "@mui/material";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [reqValue, setReqValue] = useState({ email: "", pwd: "" });
 
   async function login() {
     const request = await axios.post("http://localhost:3001/api/auth", reqValue);
     console.log(request.data);
+    navigate("/students");
   }
 
   return (

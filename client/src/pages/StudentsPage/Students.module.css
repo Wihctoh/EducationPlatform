@@ -1,0 +1,84 @@
+.studentsWrapper {
+  max-width: 1180px;
+  margin: 40px auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.studentsIntro {
+  width: 100%;
+  padding: 20px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+  background: #fff;
+}
+.studentsIntro .studentsLogo {
+  background: url(./assets/hat.svg) no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+}
+
+.studentsIntro .studentsLogo h1 {
+  font: 400 26px Dela Gothic One;
+  color: #000;
+  line-height: 100%; /* 26px */
+  letter-spacing: -1.04px;
+}
+
+.coursesWrapper {
+  width: 926px;
+  margin-top: 40px;
+  display: flex;
+  align-items: flex-start;
+
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0px 22.898128509521484px 45.79625701904297px -11.449064254760742px rgba(52, 41, 39, 0.08);
+}
+
+.coursesWrapper .course {
+  display: flex;
+  gap: 40px;
+}
+
+.coursesWrapper .course .courseImg {
+  background: url(./assets/JavaScriptCourseImg.png) no-repeat;
+  border-radius: 14px;
+  background-size: cover;
+  width: 337px;
+  height: 216px;
+}
+
+.coursesWrapper .course .courseDescription {
+  max-width: 516px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.coursesWrapper .course .courseDescription h2 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+
+  font: 400 32px Dela Gothic One;
+  text-align: center;
+  color: #000;
+  line-height: 100%; /* 32px */
+  letter-spacing: -1.28px;
+}
+
+.coursesWrapper .course .courseDescription p {
+  font: 500 16px Montserrat;
+  color: #757575;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.64px;
+}
