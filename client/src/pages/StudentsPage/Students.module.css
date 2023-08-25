@@ -1,4 +1,5 @@
-.studentsWrapper {
+.studentsWrapper,
+.pagination {
   max-width: 1180px;
   margin: 40px auto;
 
@@ -36,7 +37,6 @@
   width: 926px;
   margin-top: 40px;
   display: flex;
-  align-items: flex-start;
 
   border-radius: 14px;
   background: #fff;
@@ -49,9 +49,9 @@
 }
 
 .coursesWrapper .course .courseImg {
-  background: url(./assets/JavaScriptCourseImg.png) no-repeat;
-  border-radius: 14px;
-  background-size: cover;
+  background: url(./assets/JavaScriptCourseImg.jpeg) no-repeat;
+  border-radius: 14px 0 0 14px;
+  background-size: contain;
   width: 337px;
   height: 216px;
 }
