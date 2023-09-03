@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "h2": "JavaScript",
+    "p": "JavaScript is a practical course where students learn the basics of JavaScript. It covers variables, operators, conditionals, loops, functions, and data manipulation."
+  },
+  {
+    "id": "2",
+    "h2": "TypeScript",
+    "p": "TypeScript is a course that provides an introduction to TypeScript. Students will learn about TypeScript's key features, such as type annotations, interfaces, classes, and modules"
+  },
+  {
+    "id": "3",
+    "h2": "Python1",
+    "p": "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems."
+  },
+  {
+    "id": "4",
+    "h2": "Python2",
+    "p": "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems."
+  },
+  {
+    "id": "5",
+    "h2": "Python3",
+    "p": "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems."
+  },
+  {
+    "id": "6",
+    "h2": "Python4",
+    "p": "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems."
+  }
+]

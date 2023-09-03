@@ -1,0 +1,54 @@
+.coursePageWrapper {
+  max-width: 1180px;
+  margin: 100px auto;
+
+  display: flex;
+  gap: 10px;
+}
+
+.coursePageWrapper .coursePageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0px 22.89813px 45.79626px -11.44906px rgba(52, 41, 39, 0.08);
+}
+
+.coursePageWrapper .coursePageContainer .mainWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.coursePageWrapper .coursePageContainer .mainWrapper .courseDescriptionImg {
+  background: url(./assets/coursePrevImg.png) no-repeat;
+  background-size: contain;
+  width: 239px;
+  height: 150px;
+}
+
+.coursePageWrapper .coursePageContainer .mainWrapper .courseDescription {
+  max-width: 253px;
+}
+
+.coursePageWrapper .coursePageContainer .mainWrapper .courseDescription h1 {
+}
+
+.coursePageWrapper .coursePageContainer .mainWrapper .courseDescription p {
+}
+
+.coursePageWrapper .coursePageContainer .courseDescriptionBtn {
+}
+
+.coursePageWrapper .courseLesson {
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0px 22.89813px 45.79626px -11.44906px rgba(52, 41, 39, 0.08);
+}
+
+.coursePageWrapper .courseLesson h2 {
+}
+
+.coursePageWrapper .courseLesson p {
+}

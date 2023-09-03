@@ -1,29 +1,30 @@
-import React from "react";
-import style from "./Students.module.css";
+import { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-
+import style from "./Students.module.css";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const StudentsPage = () => {
-  const coursesArr = [
-    {
-      h2: "JavaScript",
-      p: "JavaScript is a practical course where students learn the basics of JavaScript. It covers variables, operators, conditionals, loops, functions, and data manipulation.",
-      img: "./assets/JavaScriptCourseImg.jpeg",
-    },
-    {
-      h2: "TypeScript",
-      p: "TypeScript is a course that provides an introduction to TypeScript. Students will learn about TypeScript's key features, such as type annotations, interfaces, classes, and modules",
-      img: "./assets/TypeScriptCourseImg.png",
-    },
-    {
-      h2: "Python",
-      p: "Students will learn about variables, data types, conditionals, loops, functions, and file handling. Through hands-on exercises and projects, students will gain proficiency in writing Python code and solving real-world problems.",
-      img: "background:'url(./assets/PythonCourseImg.png)",
-    },
-  ];
+  const [currentPage, setCurrentPage] = useState(1);
+  const [storage, setStorage] = useState([]);
+
+  async function getAllCourses() {
+    const res = await axios.get("http://localhost:3001/course");
+    setStorage(res.data);
+  }
+
+  useEffect(() => {
+    getAllCourses();
+  }, []);
+
+  const size = 2;
+  const lastIndex = currentPage * size;
+  const firstIndex = lastIndex - size;
+  const courseItems = storage.slice(firstIndex, lastIndex);
+
   return (
     <>
       <Header isAuth={true} />
@@ -34,22 +35,30 @@ const StudentsPage = () => {
           <h1>Courses</h1>
         </div>
 
-        {coursesArr.map((el, index) => (
-          <div className={style.coursesWrapper} key={index}>
-            <div className={style.course}>
-              <div className={style.courseImg}></div>
+        {courseItems.map((el, index) => (
+          <Link to={`/course/${el.id}`} key={index}>
+            <div className={style.coursesWrapper}>
+              <div className={style.course}>
+                <div className={style.courseImg}></div>
 
-              <div className={style.courseDescription}>
-                <h2>{el.h2}</h2>
-                <p>{el.p}</p>
+                <div className={style.courseDescription}>
+                  <h2>{el.course}</h2>
+                  <p>{el.description}</p>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
       <Stack spacing={2} className={style.pagination}>
-        <Pagination count={3} color="secondary" variant="outlined" />
+        <Pagination
+          count={Math.ceil(storage.length / size)}
+          color="secondary"
+          variant="outlined"
+          size="large"
+          onChange={(_e, page) => setCurrentPage(page)}
+        />
       </Stack>
 
       <Footer />

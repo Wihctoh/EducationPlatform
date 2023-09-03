@@ -19,14 +19,14 @@ async function getUserIDCoursesDB(id: number): Promise<iCourse[]> {
   return data;
 }
 
-async function createCourseDB(course: string): Promise<iCourse[]> {
+async function createCourseDB(course: string, description: string): Promise<iCourse[]> {
   const client = await pool.connect();
 
   try {
     await client.query("begin");
 
-    const sql = "insert into courses (course) values ($1) returning *";
-    const data = (await client.query(sql, [course])).rows;
+    const sql = "insert into courses (course, description) values ($1, $2) returning *";
+    const data = (await client.query(sql, [course, description])).rows;
 
     await client.query("commit");
 
@@ -59,13 +59,13 @@ async function deleteCourseDB(id: number): Promise<iCourse[]> {
   }
 }
 
-async function updateCourseDB(id: number, course: string): Promise<iCourse[]> {
+async function updateCourseDB(id: number, course: string, description: string): Promise<iCourse[]> {
   const client = await pool.connect();
   try {
     await client.query("begin");
 
-    const sql = "update courses set course = $1 where id = $2 returning *";
-    const data = (await client.query(sql, [course, id])).rows;
+    const sql = "update courses set course = $1 description = $2 where id = $3 returning *";
+    const data = (await client.query(sql, [course, description, id])).rows;
 
     await client.query("commit");
 
@@ -78,10 +78,4 @@ async function updateCourseDB(id: number, course: string): Promise<iCourse[]> {
   }
 }
 
-export {
-  getAllUsersCoursesDB,
-  createCourseDB,
-  getUserIDCoursesDB,
-  deleteCourseDB,
-  updateCourseDB,
-};
+export { getAllUsersCoursesDB, createCourseDB, getUserIDCoursesDB, deleteCourseDB, updateCourseDB };

@@ -15,8 +15,8 @@ async function getAllUsersCourses(): Promise<iCourse[]> {
   return data;
 }
 
-async function createCourse(course: string): Promise<iCourse[]> {
-  const data = await createCourseDB(course);
+async function createCourse(course: string, description: string): Promise<iCourse[]> {
+  const data = await createCourseDB(course, description);
 
   if (!data.length) throw new Error("cant create user!");
 
@@ -39,18 +39,12 @@ async function deleteCourse(id: number): Promise<iCourse[]> {
   return data;
 }
 
-async function updateCourse(id: number, course: string): Promise<iCourse[]> {
-  const data = await updateCourseDB(id, course);
+async function updateCourse(id: number, course: string, description: string): Promise<iCourse[]> {
+  const data = await updateCourseDB(id, course, description);
 
   if (!data.length) throw new Error("cant update user!");
 
   return data;
 }
 
-export {
-  getAllUsersCourses,
-  createCourse,
-  getUserIDCourses,
-  deleteCourse,
-  updateCourse,
-};
+export { getAllUsersCourses, createCourse, getUserIDCourses, deleteCourse, updateCourse };

@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 40px;
 }
 
 .studentsIntro {
@@ -35,7 +36,6 @@
 
 .coursesWrapper {
   width: 926px;
-  margin-top: 40px;
   display: flex;
 
   border-radius: 14px;
