@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import style from "./CoursePage.module.css";
 import Header from "../../components/Header/Header";
 import axios from "axios";
+import { Button } from "@mui/material";
 
 const CoursePage = () => {
   const [res, setRes] = useState({});
@@ -31,7 +32,11 @@ const CoursePage = () => {
             </div>
           </div>
 
-          <div className={style.courseDescriptionBtn}>Go to course</div>
+          <Link to={"#!"}>
+            <Button variant="contained" className={style.courseDescriptionBtn}>
+              Go to course
+            </Button>
+          </Link>
         </div>
 
         <div className={style.courseLesson}>

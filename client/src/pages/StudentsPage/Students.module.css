@@ -49,7 +49,7 @@
 }
 
 .coursesWrapper .course .courseImg {
-  background: url(./assets/JavaScriptCourseImg.jpeg) no-repeat;
+  /* background: url(./assets/JavaScriptCourseImg.jpeg) no-repeat; */
   border-radius: 14px 0 0 14px;
   background-size: contain;
   width: 337px;

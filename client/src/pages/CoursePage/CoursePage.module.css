@@ -3,10 +3,13 @@
   margin: 100px auto;
 
   display: flex;
+  justify-content: center;
   gap: 10px;
 }
 
 .coursePageWrapper .coursePageContainer {
+  padding-bottom: 40px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +22,7 @@
 .coursePageWrapper .coursePageContainer .mainWrapper {
   display: flex;
   justify-content: center;
+  padding: 40px;
 }
 
 .coursePageWrapper .coursePageContainer .mainWrapper .courseDescriptionImg {
@@ -26,29 +30,64 @@
   background-size: contain;
   width: 239px;
   height: 150px;
+  align-self: center;
 }
 
 .coursePageWrapper .coursePageContainer .mainWrapper .courseDescription {
   max-width: 253px;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .coursePageWrapper .coursePageContainer .mainWrapper .courseDescription h1 {
+  color: #000;
+  font: 400 32px Dela Gothic One;
+  line-height: 100%; /* 32px */
+  letter-spacing: -1.28px;
+
+  text-align: center;
 }
 
 .coursePageWrapper .coursePageContainer .mainWrapper .courseDescription p {
+  color: #757575;
+  font: 600 16px Montserrat;
+  line-height: 140%; /* 22.4px */
+  letter-spacing: -0.64px;
 }
 
 .coursePageWrapper .coursePageContainer .courseDescriptionBtn {
+  text-transform: none;
+  font: 400 16px Montserrat;
+  color: #152e37;
+  background: linear-gradient(145deg, rgba(134, 208, 218, 1) 0%, rgba(50, 151, 168, 1) 100%);
+
+  &:hover {
+    background: linear-gradient(145deg, rgba(183, 228, 234, 1) 0%, rgba(77, 179, 195, 1) 100%);
+  }
 }
 
 .coursePageWrapper .courseLesson {
   border-radius: 14px;
   background: #fff;
   box-shadow: 0px 22.89813px 45.79626px -11.44906px rgba(52, 41, 39, 0.08);
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .coursePageWrapper .courseLesson h2 {
+  color: #000;
+  font: 400 32px Dela Gothic One;
+  line-height: 100%; /* 32px */
+  letter-spacing: -1.28px;
 }
 
 .coursePageWrapper .courseLesson p {
+  color: #000;
+  font: 600 16px Montserrat;
+  line-height: 140%; /* 22.4px */
+  letter-spacing: -0.64px;
 }
