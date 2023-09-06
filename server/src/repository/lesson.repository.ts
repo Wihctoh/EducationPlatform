@@ -1,58 +1,89 @@
 import { pool } from "../db";
+import { iLesson } from "../interfaces";
 
-async function getAllLessonDB() {
+async function getAllLessonDB(): Promise<iLesson[]> {
   const client = await pool.connect();
 
   const sql = "select * from lessons";
   const data = (await client.query(sql)).rows;
 
-  client.release();
+  await client.release();
 
   return data;
 }
 
-async function getLessonByIdDB(id) {
+async function getLessonByIdDB(id: number): Promise<iLesson[]> {
   const client = await pool.connect();
 
   const sql = "select * from lessons where course_id = $1";
   const data = (await client.query(sql, [id])).rows;
 
-  client.release();
+  await client.release();
 
   return data;
 }
 
-async function createLessonDB(course_id, title) {
+async function createLessonDB(course_id: number, title: string): Promise<iLesson[]> {
   const client = await pool.connect();
 
-  const sql = "insert into lessons (course_id, title) values ($1, $2) returning *";
-  const data = (await client.query(sql, [course_id, title])).rows;
+  try {
+    await client.query("begin");
 
-  client.release();
+    const sql = "insert into lessons (course_id, title) values ($1, $2) returning *";
+    const data = (await client.query(sql, [course_id, title])).rows;
 
-  return data;
+    await client.query("commit");
+    await client.release();
+
+    return data;
+  } catch (error: any) {
+    await client.query("rollback");
+    console.log(`createLessonDB: ${error.message}`);
+
+    return [];
+  }
 }
 
-async function updateLessonDB(id, course_id, title) {
+async function updateLessonDB(id: number, course_id: number, title: string): Promise<iLesson[]> {
   const client = await pool.connect();
 
-  const sql = "update lessons set course_id = $1, title = $2  where id = $3 returning *";
-  const data = (await client.query(sql, [course_id, title, id])).rows;
+  try {
+    await client.query("begin");
 
-  client.release();
+    const sql = "update lessons set course_id = $1, title = $2  where id = $3 returning *";
+    const data = (await client.query(sql, [course_id, title, id])).rows;
 
-  return data;
+    await client.query("commit");
+    await client.release();
+
+    return data;
+  } catch (error: any) {
+    await client.query("rollback");
+    console.log(`updateLessonDB: ${error.message}`);
+
+    return [];
+  }
 }
 
-async function deleteLessonDB(id) {
+async function deleteLessonDB(id: number): Promise<iLesson[]> {
   const client = await pool.connect();
 
-  const sql = "delete from lessons where id = $1 returning *";
-  const data = (await client.query(sql, [id])).rows;
+  try {
+    await client.query("begin");
 
-  client.release();
+    const sql = "delete from lessons where id = $1 returning *";
+    const data = (await client.query(sql, [id])).rows;
 
-  return data;
+    await client.query("commit");
+    await client.release();
+
+    return data;
+  } catch (error: any) {
+    await client.query("rollback");
+    console.log(`deleteLessonDB: ${error.message}`);
+
+    return [];
+  }
 }
 
 export { getAllLessonDB, createLessonDB, updateLessonDB, deleteLessonDB, getLessonByIdDB };

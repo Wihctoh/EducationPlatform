@@ -4,6 +4,12 @@ interface iCourse {
   description: string;
 }
 
+interface iLesson {
+  id: number;
+  course_id: number;
+  title: string;
+}
+
 interface iUser {
   id: number;
   name: string;
@@ -12,4 +18,4 @@ interface iUser {
   pwd: string;
 }
 
-export { iCourse, iUser };
+export { iCourse, iUser, iLesson };

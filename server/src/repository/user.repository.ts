@@ -7,7 +7,7 @@ async function getAllUsersDB(): Promise<iUser[]> {
   const sql = "select * from users";
   const data = (await client.query(sql)).rows;
 
-  client.release();
+  await client.release();
 
   return data;
 }
@@ -18,7 +18,7 @@ async function getUserByIdDB(id: number): Promise<iUser[]> {
   const sql = "select * from users where id = $1";
   const data = (await client.query(sql, [id])).rows;
 
-  client.release();
+  await client.release();
 
   return data;
 }
@@ -40,8 +40,7 @@ async function updateUserDB(
     const data = (await client.query(sql, [id, name, surname, email, pwd])).rows;
 
     await client.query("commit");
-
-    client.release();
+    await client.release();
 
     return data;
   } catch (error: any) {
@@ -62,8 +61,7 @@ async function deleteUserDB(id: number): Promise<iUser[]> {
     const data = (await client.query(sql, [id])).rows;
 
     await client.query("commit");
-
-    client.release();
+    await client.release();
 
     return data;
   } catch (error: any) {
@@ -89,8 +87,7 @@ async function createUserTestDB(
     const data = (await client.query(sql, [name, surname, email, pwd])).rows;
 
     await client.query("commit");
-
-    client.release();
+    await client.release();
 
     return data;
   } catch (error: any) {

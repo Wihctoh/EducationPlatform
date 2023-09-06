@@ -18,7 +18,6 @@ const CoursePage = () => {
   async function getAllLessons() {
     const res = await axios.get(`http://localhost:3001/lesson/${id}`);
     setLessons(res.data);
-    console.log(res.data);
   }
 
   useEffect(() => {
