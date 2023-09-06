@@ -6,16 +6,25 @@ import axios from "axios";
 import { Button } from "@mui/material";
 
 const CoursePage = () => {
-  const [res, setRes] = useState({});
+  const [course, setCourse] = useState({});
+  const [lessons, setLessons] = useState([]);
   const { id } = useParams();
 
-  async function getAllCourses() {
+  async function getCourse() {
     const res = await axios.get(`http://localhost:3001/course/${id}`);
-    setRes(res.data[0]);
+    setCourse(res.data[0]);
+  }
+
+  async function getAllLessons() {
+    const res = await axios.get(`http://localhost:3001/lesson/${id}`);
+    setLessons(res.data);
+    console.log(res.data);
   }
 
   useEffect(() => {
-    getAllCourses();
+    getCourse();
+    getAllLessons();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -27,8 +36,8 @@ const CoursePage = () => {
             <div className={style.courseDescriptionImg}></div>
 
             <div className={style.courseDescription}>
-              <h1>{res.course}</h1>
-              <p>{res.description}</p>
+              <h1>{course.course}</h1>
+              <p>{course.description}</p>
             </div>
           </div>
 
@@ -40,8 +49,10 @@ const CoursePage = () => {
         </div>
 
         <div className={style.courseLesson}>
-          <h2>15 lessons</h2>
-          <p>1. Test</p>
+          <h2>Lessons</h2>
+          {lessons.map((el, index) => (
+            <p key={index}>{el.title}</p>
+          ))}
         </div>
       </div>
     </>

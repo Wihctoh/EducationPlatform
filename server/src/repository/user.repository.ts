@@ -7,6 +7,8 @@ async function getAllUsersDB(): Promise<iUser[]> {
   const sql = "select * from users";
   const data = (await client.query(sql)).rows;
 
+  client.release();
+
   return data;
 }
 
@@ -15,6 +17,8 @@ async function getUserByIdDB(id: number): Promise<iUser[]> {
 
   const sql = "select * from users where id = $1";
   const data = (await client.query(sql, [id])).rows;
+
+  client.release();
 
   return data;
 }
@@ -33,10 +37,11 @@ async function updateUserDB(
 
     const sql =
       "update users set name = $2, surname = $3, email = $4, pwd = $5 where id = $1 returning *";
-    const data = (await client.query(sql, [id, name, surname, email, pwd]))
-      .rows;
+    const data = (await client.query(sql, [id, name, surname, email, pwd])).rows;
 
     await client.query("commit");
+
+    client.release();
 
     return data;
   } catch (error: any) {
@@ -58,6 +63,8 @@ async function deleteUserDB(id: number): Promise<iUser[]> {
 
     await client.query("commit");
 
+    client.release();
+
     return data;
   } catch (error: any) {
     await client.query("rollback");
@@ -67,7 +74,7 @@ async function deleteUserDB(id: number): Promise<iUser[]> {
   }
 }
 
-async function cteateUserTestDB(
+async function createUserTestDB(
   name: string,
   surname: string,
   email: string,
@@ -78,25 +85,20 @@ async function cteateUserTestDB(
   try {
     await client.query("begin");
 
-    const sql =
-      "insert into users (name, surname, email, pwd) values ($1, $2 ,$3, $4) returning *";
+    const sql = "insert into users (name, surname, email, pwd) values ($1, $2 ,$3, $4) returning *";
     const data = (await client.query(sql, [name, surname, email, pwd])).rows;
 
     await client.query("commit");
 
+    client.release();
+
     return data;
   } catch (error: any) {
     await client.query("rollback");
-    console.log(`cteateUserTestDB ${error.message}`);
+    console.log(`createUserTestDB ${error.message}`);
 
     return [];
   }
 }
 
-export {
-  getAllUsersDB,
-  getUserByIdDB,
-  updateUserDB,
-  deleteUserDB,
-  cteateUserTestDB,
-};
+export { getAllUsersDB, getUserByIdDB, updateUserDB, deleteUserDB, createUserTestDB };

@@ -4,7 +4,7 @@ import {
   getUserById,
   updateUser,
   deleteUser,
-  cteateUserTest,
+  createUserTest,
 } from "../service/user.service";
 import buildResponse from "../helper/buildResponse";
 
@@ -58,7 +58,7 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
   try {
     const { name, surname, email, pwd } = req.body;
 
-    const data = await cteateUserTest(name, surname, email, pwd);
+    const data = await createUserTest(name, surname, email, pwd);
 
     buildResponse(res, 200, data);
   } catch (error: any) {
