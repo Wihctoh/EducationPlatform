@@ -29,6 +29,7 @@ const CoursePage = () => {
   return (
     <>
       <Header isAuth={true} />
+
       <div className={style.coursePageWrapper}>
         <div className={style.coursePageContainer}>
           <div className={style.mainWrapper}>
@@ -53,6 +54,12 @@ const CoursePage = () => {
             <p key={index}>{el.title}</p>
           ))}
         </div>
+
+        <Link to={"/students"}>
+          <Button variant="contained" className={style.courseDescriptionBtnBack}>
+            Back
+          </Button>
+        </Link>
       </div>
     </>
   );

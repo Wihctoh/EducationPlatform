@@ -91,3 +91,13 @@
   line-height: 140%; /* 22.4px */
   letter-spacing: -0.64px;
 }
+
+.courseDescriptionBtnBack {
+  font: 400 16px Montserrat;
+  color: #152e37;
+  background: linear-gradient(145deg, rgba(134, 208, 218, 1) 0%, rgba(50, 151, 168, 1) 100%);
+
+  &:hover {
+    background: linear-gradient(145deg, rgba(183, 228, 234, 1) 0%, rgba(77, 179, 195, 1) 100%);
+  }
+}
