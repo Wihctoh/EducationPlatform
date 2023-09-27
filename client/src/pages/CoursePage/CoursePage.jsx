@@ -28,7 +28,7 @@ const CoursePage = () => {
 
   return (
     <>
-      <Header isAuth={true} />
+      <Header />
 
       <div className={style.coursePageWrapper}>
         <div className={style.coursePageContainer}>

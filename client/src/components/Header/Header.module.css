@@ -7,10 +7,11 @@
   justify-content: space-between;
   align-items: center;
 
-  & h1 a {
+  & h1 {
     font: 400 16px Dela Gothic One;
     color: #000;
     padding-right: 30px;
+    cursor: pointer;
 
     border-right: 1.182px solid #e0e0e0;
   }

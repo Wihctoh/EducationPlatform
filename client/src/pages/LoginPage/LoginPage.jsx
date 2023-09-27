@@ -1,22 +1,27 @@
 import Footer from "../../components/Footer/Footer";
+import axios from "axios";
 import Header from "../../components/Header/Header";
 import InputForm from "../../components/Input/InputForm";
 import style from "../LoginPage/LoginPage.module.css";
 import { Button } from "@mui/material";
-import { useState } from "react";
-import axios from "axios";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ErrorAlert from "../../components/Alert/ErrorAlert";
+import AuthContext from "../../Context/AuthContext";
 
 function LoginPage() {
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
   const [reqValue, setReqValue] = useState({ email: "", pwd: "" });
   const [erMess, setErMess] = useState("");
 
-  async function login() {
+  async function sendForm() {
     try {
-      await axios.post("http://localhost:3001/api/auth", reqValue);
-
+      const data = await axios.post("http://localhost:3001/api/auth", reqValue, {
+        withCredentials: true,
+      });
+      console.log(data);
+      login();
       navigate("/students");
     } catch (error) {
       setErMess(error.response.data);
@@ -41,7 +46,7 @@ function LoginPage() {
 
           {erMess && <ErrorAlert sendMess={erMess} />}
 
-          <Button variant="contained" size="large" className={style.loginBtn} onClick={login}>
+          <Button variant="contained" size="large" className={style.loginBtn} onClick={sendForm}>
             Login
           </Button>
         </div>

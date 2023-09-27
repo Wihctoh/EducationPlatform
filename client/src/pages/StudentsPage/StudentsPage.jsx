@@ -27,7 +27,7 @@ const StudentsPage = () => {
 
   return (
     <>
-      <Header isAuth={true} />
+      <Header />
 
       <div className={style.studentsWrapper}>
         <div className={style.studentsIntro}>
