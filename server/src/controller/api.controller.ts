@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import { createUser, authUser, deleteUserTest } from "../service/api.service";
+import createToken from "../helper/jwt";
 import buildResponse from "../helper/buildResponse";
 
 const router = express.Router();
@@ -19,7 +20,12 @@ router.post("/auth", async (req: Request, res: Response): Promise<void> => {
   try {
     const { email, pwd } = req.body;
     const data = await authUser(email, pwd);
+    const token = createToken(data);
 
+    res.cookie("access_token", token, {
+      httpOnly: false,
+      secure: true,
+    });
     buildResponse(res, 200, data);
   } catch (error: any) {
     buildResponse(res, 403, error.message);

@@ -1,15 +1,16 @@
 import express, { Request, Response, NextFunction } from "express";
-import bodyParser from "body-parser";
 import courseRouter from "./controller/course.controller";
 import userRouter from "./controller/user.controller";
 import apiRouter from "./controller/api.controller";
 import lessonRouter from "./controller/lesson.controller";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(express.json());
+app.use(cookieParser());
 
 app.use("/course", courseRouter);
 app.use("/user", userRouter);
